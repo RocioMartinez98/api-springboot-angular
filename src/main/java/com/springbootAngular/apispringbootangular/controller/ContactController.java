@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
 
+@CrossOrigin //acceder a los recursos de un servidor diferente al del servidor actual
 @AllArgsConstructor
 @RestController
 @RequestMapping("/api/contacts")
