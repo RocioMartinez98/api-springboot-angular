@@ -22,7 +22,16 @@
                 <td>{{contact.name}}</td>
                 <td>{{contact.email}}</td>
                 <td>{{contact.createrAt | date: "dd/MM/yyy hh:mm a"}}</td>
-                <td></td>
+                <td class="text-end">
+                    <div class="btn-group">
+                        <button class="btn btn-primary" [routerLink]="[contact.id, 'edit']"> 
+                            Editar
+                        </button>
+                        <button class="btn btn-danger" (click)="deleteContact(contact)">
+                            Eliminar
+                        </button>
+                    </div>
+                </td>
             </tr>
         }
     </tbody>

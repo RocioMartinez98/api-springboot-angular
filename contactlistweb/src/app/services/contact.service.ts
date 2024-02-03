@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable, inject } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Contact } from '../model/contact.interface';
 
 @Injectable({
@@ -7,27 +7,27 @@ import { Contact } from '../model/contact.interface';
 })
 export class ContactService {
 
-  private http = inject(HttpClient);
+  constructor(private http: HttpClient) { }
 
-  list(){
-    return this.http.get<Contact[]>("http://localhost:8080/api/contacts")
+  list() {
+    return this.http.get<Contact[]>("http://localhost:8080/api/contacts");
   }
 
-  get(id:number){
-    return this.http.get<Contact>("http://localhost:8080/api/contacts/${id}")
+  get(id: number) {
+    return this.http.get<Contact>(`http://localhost:8080/api/contacts/${id}`);
   }
 
-  create(contact: any){
+  create(contact: Contact) {
     console.log("Datos recibidos en el servicio:", contact);
-    return this.http.post<Contact>("http://localhost:8080/api/contacts", contact)
+    return this.http.post<Contact>("http://localhost:8080/api/contacts", contact);
   }
 
-  update(id: number, contact: any){
-    return this.http.put<Contact>("http://localhost:8080/api/contacts/${id}", contact)
+  update(id: number, contact: Contact) {
+    return this.http.put<Contact>(`http://localhost:8080/api/contacts/${id}`, contact);
   }
 
-  delete(id: number){
-    return this.http.delete<void>("http://localhost:8080/api/contacts/${id}")
+  delete(id: number) {
+    return this.http.delete<void>(`http://localhost:8080/api/contacts/${id}`);
   }
 
 }
