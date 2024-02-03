@@ -17,6 +17,7 @@ export class ContactService {
   }
 
   create(contact: any){
+    console.log("Datos recibidos en el servicio:", contact);
     return this.http.post("http://localhost:8080/api/contacts", contact)
   }
 
