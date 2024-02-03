@@ -19,11 +19,11 @@ public class Contact {
     private Integer id;
 
     @NonNull
-    private String nombre;
+    private String name;
     @NonNull
     private String email;
     @NonNull
     private LocalDateTime createrAt; //Fecha de creacion
 
+  }
 
-}

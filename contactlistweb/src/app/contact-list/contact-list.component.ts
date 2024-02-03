@@ -20,6 +20,7 @@ export default class ContactListComponent implements OnInit{
     this.contactService.list()
     .subscribe((contacts : any)=>{
       this.contacts = contacts;
+      console.log(this.contacts);
     });
   }
 

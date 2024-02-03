@@ -33,7 +33,7 @@ public class ContactService {
 
     public Contact update(Integer id,Contact form){
         Contact contactFromBd = findById(id);
-        contactFromBd.setNombre(form.getNombre());
+        contactFromBd.setName(form.getName());
         contactFromBd.setEmail(form.getEmail());
 
         return contactRepository.save(contactFromBd);
